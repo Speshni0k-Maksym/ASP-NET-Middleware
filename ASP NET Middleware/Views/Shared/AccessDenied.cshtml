@@ -1,0 +1,26 @@
+﻿
+@{
+    ViewData["Title"] = "Access denied Page";
+}
+
+<style>
+    .access-card {
+        max-width: 640px;
+        margin: 40px auto;
+    }
+    .access-icon {
+        font-size: 48px;
+        line-height: 1;
+    }
+</style>
+<div class="card access-card text-center shadow-sm">
+    <div class="card-body">
+        <div class="mb-3 access-icon text-danger">🔒</div>
+        <h3 class="card-title mb-2">Доступ заборонено</h3>
+        <p class="text-muted mb-4">У вас немає прав для перегляду цієї сторінки. Будь ласка, увійдіть під відповідним обліковим записом.</p>
+        <div>
+            <a class="btn btn-primary me-2" href="/Account/Login">Увійти</a>
+            <a class="btn btn-outline-secondary" href="/">На головну</a>
+        </div>
+    </div>
+</div>

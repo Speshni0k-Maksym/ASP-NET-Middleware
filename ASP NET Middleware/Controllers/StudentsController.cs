@@ -3,6 +3,7 @@ namespace ASP_NET_Middleware.Controllers
     using System.Text;
     using System.Threading.Tasks;
     using Microsoft.AspNetCore.Mvc;
+    using Microsoft.AspNetCore.Authorization;
     using ASP_NET_Middleware.Models;
     using ASP_NET_Middleware.Services;
 
@@ -16,9 +17,11 @@ namespace ASP_NET_Middleware.Controllers
         }
 
         [HttpGet]
+        [Authorize(Roles = "Admin")]
         public IActionResult Create() => View(new Student());
 
         [HttpPost]
+        [Authorize(Roles = "Admin")]
         public async Task<IActionResult> Create(Student student)
         {
             if (!ModelState.IsValid) return View(student);
@@ -35,7 +38,7 @@ namespace ASP_NET_Middleware.Controllers
             {
                 sb.AppendLine($"{Escape(s.Name)},{s.Age},{Escape(s.Group)},{s.IsGrade}");
             }
-            var bytes = Encoding.UTF8.GetBytes(sb.ToString());
+            var bytes = System.Text.Encoding.UTF8.GetBytes(sb.ToString());
             return File(bytes, "text/csv", "students.csv");
         }
 

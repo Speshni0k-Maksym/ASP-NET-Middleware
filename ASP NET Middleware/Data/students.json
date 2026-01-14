@@ -4,5 +4,11 @@
     "Age": 17,
     "Group": "Hgfd",
     "IsGrade": true
+  },
+  {
+    "Name": "Maks2",
+    "Age": 51,
+    "Group": "vb",
+    "IsGrade": false
   }
 ]
