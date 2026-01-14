@@ -1,0 +1,30 @@
+@model ASP_NET_Middleware.Models.Student
+@{
+    ViewData["Title"] = "Create Page";
+}
+<h2 class="mb-3">Add Student</h2>
+<form asp-action="Create" method="post" class="row g-3">
+    <div class="col-md-6">
+        <label asp-for="Name" class="form-label"></label>
+        <input asp-for="Name" class="form-control" />
+        <span asp-validation-for="Name" class="text-danger"></span>
+    </div>
+    <div class="col-md-2">
+        <label asp-for="Age" class="form-label"></label>
+        <input asp-for="Age" class="form-control" />
+        <span asp-validation-for="Age" class="text-danger"></span>
+    </div>
+    <div class="col-md-4">
+        <label asp-for="Group" class="form-label"></label>
+        <input asp-for="Group" class="form-control" />
+        <span asp-validation-for="Group" class="text-danger"></span>
+    </div>
+    <div class="col-12 form-check">
+        <input asp-for="IsGrade" class="form-check-input" />
+        <label asp-for="IsGrade" class="form-check-label"></label>
+    </div>
+    <div class="col-12">
+        <button type="submit" class="btn btn-success">Save</button>
+        <a class="btn btn-link" href="@Url.Action("Index", "Home")">Cancel</a>
+    </div>
+</form>
