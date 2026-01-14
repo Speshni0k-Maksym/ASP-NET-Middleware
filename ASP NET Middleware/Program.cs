@@ -13,6 +13,7 @@ namespace ASP_NET_Middleware
 
             builder.Services.AddControllersWithViews();
             builder.Services.AddSingleton<IStudentRepository, StudentRepository>();
+            builder.Services.AddSingleton<IWishService, WishService>();
 
             var app = builder.Build();
 

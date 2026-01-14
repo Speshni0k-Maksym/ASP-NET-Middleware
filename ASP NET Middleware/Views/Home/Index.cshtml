@@ -7,5 +7,10 @@
     <div class="d-flex justify-content-center gap-3">
         <a class="btn btn-primary" href="/Students/Create">Add Student</a>
         <a class="btn btn-secondary" href="/Students/Export">Export Students</a>
+        <a class="btn btn-info" href="/Wishes/Write">Write Wish</a>
     </div>
+    @if (TempData["LastWish"] is string last)
+    {
+        <div class="mt-4 alert alert-success" role="alert">@last</div>
+    }
 </div>
